@@ -1,8 +1,7 @@
 (ns lumo-test-1.core
   (:require [cljs.reader :refer [read-string]]
             [cljs.nodejs :as node]
-            [clojure.string :as str]
-            [clojure.data.xml :refer [parse]]))
+            [clojure.string :as str]))
 
 
 
