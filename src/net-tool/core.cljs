@@ -35,30 +35,28 @@
               .toString)]
       (js->clj (parse-xml xml) :keywordize-keys true)))
 
-
 (defn parse-dump-xml [v]
   (mapv (fn [m]
-            (let [t (assoc {} :type (get-in m [:_attributes :type]))
-                  m (assoc t :mac (get-in m [:mac :_attributes :address]))
-                  b (assoc m :bridge (get-in m [:source :_attributes :bridge]))
-                  h (assoc b :hostdev (get-in m [:target :_attributes :dev]))
-                  d (assoc h :guestdriver (get-in m [:model :_attributes :type]))
-                  a (assoc d :alias (get-in m [:alias :_attributes :name]))
-                  p (assoc d :pciaddress {:domain (get-in m [:address :_attributes :domain])
+            (let [result {:type (get-in m [:_attributes :type])
+                          :mac (get-in m [:mac :_attributes :address])
+                          :bridge (get-in m [:source :_attributes :bridge])
+                          :hostdev (get-in m [:target :_attributes :dev])
+                          :guestdriver (get-in m [:model :_attributes :type])
+                          :alias (get-in m [:alias :_attributes :name])
+                          :pciaddress {:domain (get-in m [:address :_attributes :domain])
                                           :bus (get-in m [:address :_attributes :bus])
                                           :slot (get-in m [:address :_attributes :slot])
-                                          :function (get-in m [:address :_attributes :function])})]
+                                          :function (get-in m [:address :_attributes :function])}}]
 
-              p)    
-          m)))
+              result)
+          v)))
           
-  
 
 
 (defn -main []
   (println "Starting..")
   (let [interfaces (into []  (:interface (:devices (:domain (dump-xml "director")))))]
-      (clojure.pprint/print-table (parse-dump-xml interfaces))))
+      (clojure.pprint/print-table (parse-dump-xml interfaces)))
 
 
 
@@ -119,6 +117,6 @@
        :domain "0x0000",
        :bus "0x00",
        :slot "0x06",
-       :function "0x0"}}}]}
+       :function "0x0"}}}]})
 
 
