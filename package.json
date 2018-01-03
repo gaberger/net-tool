@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@cljs-oss/module-deps": "^1.1.1",
+    "fast-xml-parser": "^2.8.3",
+    "shelljs": "^0.7.8",
+    "xml-js": "^1.6.1"
+  }
+}

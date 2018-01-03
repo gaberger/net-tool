@@ -1,0 +1,25 @@
+2: em1 state DOWN : <BROADCAST,MULTICAST> mtu 1500 hwmode VEPA
+3: em2 state UP : <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 master bond0 hwmode VEPA
+4: em3 state UP : <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 master bond1 hwmode VEPA
+5: em4 state DOWN : <BROADCAST,MULTICAST> mtu 1500 hwmode VEPA
+6: p1p1 state DOWN : <BROADCAST,MULTICAST> mtu 1500 hwmode VEPA
+7: p1p2 state DOWN : <BROADCAST,MULTICAST> mtu 1500 hwmode VEPA
+8: p4p1 state DOWN : <BROADCAST,MULTICAST> mtu 1500 hwmode VEPA
+9: p4p2 state DOWN : <BROADCAST,MULTICAST> mtu 1500 hwmode VEPA
+13: bond0.110 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-mgmt state forwarding priority 32 cost 2
+13: bond0.110 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-mgmt
+15: bond0.120 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-prov state forwarding priority 32 cost 2
+15: bond0.120 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-prov
+17: bond0.140 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-priv-api state forwarding priority 32 cost 2
+17: bond0.140 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-priv-api
+19: bond0.170 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-stor state forwarding priority 32 cost 2
+19: bond0.170 state UP @bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-stor
+21: bond1.211 state UP @bond1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-pub-api state forwarding priority 32 cost 2
+21: bond1.211 state UP @bond1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-pub-api
+24: virbr0-nic state DOWN : <BROADCAST,MULTICAST> mtu 1500 master virbr0 state disabled priority 32 cost 100
+25: vnet0 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-pub-api state forwarding priority 32 cost 100
+26: vnet1 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-stor state forwarding priority 32 cost 100
+27: vnet2 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-pub-api state forwarding priority 32 cost 100
+28: vnet3 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-prov state forwarding priority 32 cost 100
+29: vnet4 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-mgmt state forwarding priority 32 cost 100
+30: vnet5 state UNKNOWN : <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 master br-priv-api state forwarding priority 32 cost 100

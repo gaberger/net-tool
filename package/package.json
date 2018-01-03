@@ -1,0 +1,15 @@
+{
+  "name": "net-tool",
+  "version": "1.0.0",
+  "description": ";INSTALL ;npm install -g lumo-cljs --unsafe-perm ;curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash - ;sudo yum -y install nodejs",
+  "main": "index.js",
+  "dependencies": {
+    "xml-js": "^1.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
