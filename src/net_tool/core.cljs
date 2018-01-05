@@ -5,7 +5,7 @@
             [clojure.tools.cli :refer [parse-opts]]
             [cljs-node-io.core :as io :refer [slurp spit]]
             [xml-js]
-            [net-tool.depends :refer [spawn]]))
+            [net-tool.depends :as d]))
 
 (defn parse-xml [xml]
   (.xml2js xml-js xml #js{:compact true}))
@@ -14,14 +14,14 @@
   (boolean
     (re-find #"virsh"
              (->
-               (spawn "which virsh")
+               (d/spawn "which virsh")
                (js->clj :keywordize-keys true)
                :stdout
                .toString))))
 
 (defn running-domains []
   (->
-    (spawn "virsh list --name --state-running")
+    (d/spawn "virsh list --name --state-running")
     (js->clj :keywordize-keys true)
     :stdout
     .toString
@@ -30,7 +30,7 @@
 
 (defn dump-xml [domain]
   (let [xml (->
-              (spawn (str "virsh dumpxml " domain))
+              (d/spawn (str "virsh dumpxml " domain))
               (js->clj :keywordize-keys true)
               :stdout
               .toString)]
@@ -68,10 +68,10 @@
 
 (def cli-options
   ; An option with a required argument
-  [["-p" "--port PORT" "Port number"]
-   :default 80
-   :parse-fn #(js/parseInt %)
-   :validate [#(< 0 % 0x10000) "Must be a number between 0 and 65536"]
+  [["-p" "--port PORT" "Port number"
+    :default 80
+    :parse-fn #(js/parseInt %)
+    :validate [#(< 0 % 0x10000) "Must be a number between 0 and 65536"]]
   ;; A non-idempotent option
    ["-v" nil "Verbosity level"
     :id :verbosity
