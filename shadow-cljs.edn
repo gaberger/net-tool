@@ -1,0 +1,9 @@
+;; shadow-cljs configuration
+{:source-paths ["src"]
+ :dependencies [[cljs-node-io "0.5.0"]
+                [instaparse "1.4.8"]]
+ :builds {:app {:output-to "target/main.js"
+                :main net-tool.core/main
+                :target :node-script
+                :hashbang false
+                :compiler-options {:optimizations :simple}}}}

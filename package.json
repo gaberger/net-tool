@@ -1,8 +1,22 @@
 {
+  "name": "net-tool",
+  "version": "1.0.0",
+  "description": "Linux Network Tools",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gary Berger",
+  "license": "SEE LICENSE IN LICENSE.MD",
   "dependencies": {
     "@cljs-oss/module-deps": "^1.1.1",
     "fast-xml-parser": "^2.8.3",
     "shelljs": "^0.7.8",
     "xml-js": "^1.6.1"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.0.128",
+    "source-map-support": "^0.4.14",
+    "ws": "^2.3.1"
   }
 }
